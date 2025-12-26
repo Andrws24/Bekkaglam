@@ -1,0 +1,39 @@
+[
+  {
+    "nombre": "Vestido Rosa",
+    "precio": 40,
+    "imagen": "catalogo/producto1.jpg",
+    "whatsapp": "Vestido Rosa",
+    "categoria": "vestidos"
+  },
+  {
+    "nombre": "Blusa Pastel",
+    "precio": 25,
+    "imagen": "catalogo/producto2.jpg",
+    "whatsapp": "Blusa Pastel",
+    "categoria": "blusas"
+  },
+  {
+    "nombre": "Pantalón Claro",
+    "precio": 35,
+    "imagen": "catalogo/producto3.jpg",
+    "whatsapp": "Pantalón Claro",
+    "categoria": "pantalones"
+  },
+  {
+    "nombre": "Pantalón Oscuro",
+    "precio": 35,
+    "imagen": "catalogo/producto4.jpg",
+    "whatsapp": "Pantalón Oscuro",
+    "categoria": "pantalones"
+  },
+
+{
+    "nombre": "Pantalón Oscuro",
+    "precio": 35,
+    "imagen": "catalogo/producto4.jpg",
+    "whatsapp": "Pantalón Oscuro",
+    "categoria": "blusas"
+  }
+
+]

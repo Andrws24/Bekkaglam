@@ -7,32 +7,10 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-
-    const inputBuscar = document.getElementById('buscador');
-    const productos = document.querySelectorAll('.producto');
-
-    inputBuscar.addEventListener('keyup', function () {
-        const texto = inputBuscar.value.toLowerCase();
-
-        productos.forEach(producto => {
-            const nombre = producto.querySelector('h3').textContent.toLowerCase();
-
-            if (nombre.includes(texto)) {
-                producto.style.display = 'block';
-            } else {
-                producto.style.display = 'none';
-            }
-        });
-    });
-
-});
-</script>
-
-
 
 <body>
+
+    
 
 <header class="header">
     <div class="logo">
@@ -49,93 +27,33 @@ document.addEventListener('DOMContentLoaded', function () {
     </nav>
 </header>
 
+<!-- Buscador -->
+<div class="buscador">
+    <input type="text" id="buscador" placeholder="Buscar Producto..">
+</div>
 
-    <div class="buscador">
-        <input type="text" id="buscador" placeholder="Buscar Producto..">
-    </div>
+<div class="categorias">
+    <button data-categoria="todos" class="btn-categoria active">Todos</button>
+    <button data-categoria="vestidos" class="btn-categoria">Vestidos</button>
+    <button data-categoria="blusas" class="btn-categoria">Blusas</button>
+    <button data-categoria="pantalones" class="btn-categoria">Pantalones</button>
+</div>
 
+
+
+<!-- Catálogo -->
 <section class="catalogo">
     <h2>Nuestro Catálogo</h2>
-
-    <div class="productos">
-
-        <div class="producto">
-            <img src="assets/img/catalogo/producto1.jpg" alt="Producto 1">
-            <h3>Vestido Rosa</h3>
-            <p>$40.00</p>
-            <a href="https://wa.me/3023461106?text=Hola,%20me%20interesa%20el%20Vestido%20Rosa"
-               target="_blank" class="btn-whatsapp">
-               Comprar por WhatsApp
-            </a>
-        </div>
-
-        <div class="producto">
-            <img src="assets/img/catalogo/producto2.jpg" alt="Producto 2">
-            <h3>Blusa Pastel</h3>
-            <p>$25.00</p>
-            <a href="https://wa.me/XXXXXXXXXX?text=Hola,%20me%20interesa%20la%20Blusa%20Pastel"
-               target="_blank" class="btn-whatsapp">
-               Comprar por WhatsApp
-            </a>
-        </div>
-
-        <div class="producto">
-            <img src="assets/img/catalogo/producto3.jpg" alt="Producto 3">
-            <h3>Pantalón Claro</h3>
-            <p>$35.00</p>
-            <a href="https://wa.me/XXXXXXXXXX?text=Hola,%20me%20interesa%20el%20Pantalón%20Claro"
-               target="_blank" class="btn-whatsapp">
-               Comprar por WhatsApp
-            </a>
-        </div>
-
-         <div class="producto">
-            <img src="assets/img/catalogo/producto3.jpg" alt="Producto 3">
-            <h3>Pantalón Claro</h3>
-            <p>$35.00</p>
-            <a href="https://wa.me/XXXXXXXXXX?text=Hola,%20me%20interesa%20el%20Pantalón%20Claro"
-               target="_blank" class="btn-whatsapp">
-               Comprar por WhatsApp
-            </a>
-        </div>
- <div class="producto">
-            <img src="assets/img/catalogo/producto3.jpg" alt="Producto 3">
-            <h3>Pantalón Claro</h3>
-            <p>$35.00</p>
-            <a href="https://wa.me/XXXXXXXXXX?text=Hola,%20me%20interesa%20el%20Pantalón%20Claro"
-               target="_blank" class="btn-whatsapp">
-               Comprar por WhatsApp
-            </a>
-        </div>
-
-
- <div class="producto">
-            <img src="assets/img/catalogo/producto3.jpg" alt="Producto 3">
-            <h3>Pantalón Claro</h3>
-            <p>$35.00</p>
-            <a href="https://wa.me/XXXXXXXXXX?text=Hola,%20me%20interesa%20el%20Pantalón%20Claro"
-               target="_blank" class="btn-whatsapp">
-               Comprar por WhatsApp
-            </a>
-        </div>
-
- <div class="producto">
-            <img src="assets/img/catalogo/producto3.jpg" alt="Producto 3">
-            <h3>Pantalón Oscuro</h3>
-            <p>$35.00</p>
-            <a href="https://wa.me/XXXXXXXXXX?text=Hola,%20me%20interesa%20el%20Pantalón%20Claro"
-               target="_blank" class="btn-whatsapp">
-               Comprar por WhatsApp
-            </a>
-        </div>
-
-
-    </div>
+    <!-- Aquí se cargan los productos desde JS -->
+    <div class="productos" id="productos"></div>
 </section>
 
 <footer class="footer">
     <p>© 2025 Bekkaglam</p>
 </footer>
+
+<!-- JS que carga los productos -->
+<script src="js/catalogo.js"></script>
 
 </body>
 </html>
