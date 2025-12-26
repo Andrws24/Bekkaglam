@@ -32,6 +32,11 @@ body {
     line-height: 1.6;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
 /* =========================
    HEADER
 ========================= */
@@ -39,7 +44,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 2rem;
+    padding: 1rem 2rem;
     background-color: var(--blanco);
     border-bottom: 2px solid var(--rosa-suave);
     position: sticky;
@@ -60,6 +65,7 @@ body {
 .nav a {
     text-decoration: none;
     color: var(--rosa-oscuro);
+    font-weight: 500;
     transition: 0.3s;
 }
 
@@ -74,22 +80,46 @@ body {
 .hero {
     height: 90vh;
     background: linear-gradient(
-        rgba(233, 30, 99, 0.6),
-        rgba(233, 30, 99, 0.4)
+        rgba(233, 30, 99, 0.4),
+        rgba(233, 30, 99, 0.2)
     ), url("../assets/img/hero/hero.jpg") center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--blanco);
+    position: relative;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.hero-logo {
+    width: 150px;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .hero-content h2 {
     font-size: 2.8rem;
+    margin-bottom: 1rem;
 }
 
 .hero-content p {
-    margin: 1rem 0 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+/* Animación fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* =========================
@@ -101,6 +131,8 @@ body {
     color: var(--blanco);
     border-radius: 30px;
     text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
 .btn:hover {
@@ -116,48 +148,108 @@ body {
     text-decoration: none;
     display: inline-block;
     margin-top: 0.8rem;
+    transition: 0.3s;
 }
+
+.btn-whatsapp:hover {
+    opacity: 0.9;
+}
+
+/* Botones de categoría */
+.categorias {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.categorias .btn-categoria {
+    background-color: var(--rosa-suave);
+    color: var(--rosa-oscuro);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    margin: 0 5px 10px 5px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.categorias .btn-categoria:hover,
+.categorias .btn-categoria.active {
+    background-color: var(--rosa-principal);
+    color: var(--blanco);
+}
+
+
+
+
+
+
+
+
+
 
 /* =========================
-   CATÁLOGO
+   PRODUCTOS DESTACADOS / CATÁLOGO
 ========================= */
+.destacados,
 .catalogo {
     padding: 4rem 2rem;
-    background-color: var(--rosa-claro);
-}
-
-.catalogo h2 {
     text-align: center;
-    margin-bottom: 3rem;
-    color: var(--rosa-principal);
 }
 
-.productos {
+.destacados h2,
+.catalogo h2 {
+    color: var(--rosa-principal);
+    margin-bottom: 2rem;
+}
+
+/* Grid de productos */
+.productos,
+.catalogo .productos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    justify-items: center;
 }
 
 .producto {
+    max-width: 220;
+    width: 100%;
+    margin: 0 auto;
     background-color: var(--blanco);
     padding: 1.2rem;
     border-radius: 12px;
     text-align: center;
     border: 1px solid var(--rosa-suave);
     box-shadow: 0 10px 20px rgba(233, 30, 99, 0.12);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(233, 30, 99, 0.2);
 }
 
 .producto img {
     width: 100%;
+    margin: 0 auto 1rem;
+    max-width: 200px;
+    height: auto;
     border-radius: 10px;
+    margin-bottom: 1rem;
 }
 
 .producto h3 {
     margin: 0.5rem 0;
 }
 
+.producto p {
+    color: var(--rosa-principal);
+    font-weight: 600;
+}
+
 /* =========================
-   TIENDA / CONTACTO
+   SECCIONES TIENDA / CONTACTO
 ========================= */
 .tienda,
 .contacto {
@@ -201,21 +293,33 @@ body {
         flex-wrap: wrap;
         justify-content: center;
     }
+
+    .productos,
+    .catalogo .productos {
+        gap: 1.5rem;
+    }
 }
 
 /* =========================
    BUSCADOR
 ========================= */
-
 .buscador {
     text-align: center;
     margin: 20px 0;
 }
 
 .buscador input {
-    padding: 12px;
+    padding: 12px 20px;
     width: 280px;
+    max-width: 90%;
     border-radius: 25px;
     border: 1px solid #ccc;
     font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.buscador input:focus {
+    border-color: var(--rosa-principal);
+    box-shadow: 0 0 8px rgba(233, 30, 99, 0.2);
 }
