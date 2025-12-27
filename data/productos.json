@@ -16,24 +16,24 @@
   {
     "nombre": "Pantalón Claro",
     "precio": 35,
-    "imagen": "catalogo/producto3.jpg",
+    "imagen": "catalogo/producto2.jpg",
     "whatsapp": "Pantalón Claro",
     "categoria": "vestidos"
   },
   {
-    "nombre": "Pantalón Oscuro",
+    "nombre": "Salida de Baño",
     "precio": 35,
-    "imagen": "catalogo/producto4.jpg",
-    "whatsapp": "Pantalón Oscuro",
-    "categoria": "pantalones"
+    "imagen": "catalogo/producto2.jpg",
+    "whatsapp": "Salida de Baño",
+    "categoria": "Bikini"
   },
 
 {
-    "nombre": "Pantalón Oscuro",
-    "precio": 35,
-    "imagen": "catalogo/producto4.jpg",
-    "whatsapp": "Pantalón Oscuro",
-    "categoria": "blusas"
+    "nombre": "Bolso mini",
+    "precio": 45.000,
+    "imagen": "catalogo/producto2.jpg",
+    "whatsapp": "Bolso Mini",
+    "categoria": "Accesorios"
   }
 
 ]
